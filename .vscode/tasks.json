@@ -1,0 +1,18 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Debug g++",
+            "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe",
+            "args": [
+                "${workspaceFolder}\\src\\*.cpp", //entry point
+                "-g","-O2", // Allow debug
+                "-IC:\\SDL2-2.0.16\\x86_64-w64-mingw32\\include\\SDL2", //includes
+                "-LC:\\SDL2-2.0.16\\x86_64-w64-mingw32\\lib", //linker
+                "-lmingw32", "-lSDL2main", "-lSDL2", //sdl flags
+                "-o","${workspaceFolder}\\bin\\debug.exe" //output exe
+            ]
+        }
+    ],
+    "version": "2.0.0"
+}
