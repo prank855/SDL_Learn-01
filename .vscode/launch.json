@@ -5,18 +5,21 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "g++.exe - Build and debug active file",
+            "name": "g++.exe - Build and debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}\\bin\\debug.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
+            "cwd": "${workspaceFolder}\\bin",
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\ProgramData\\chocolatey\\bin\\gdb.exe",
-            "preLaunchTask": "Debug g++"
+            "preLaunchTask": "Debug g++",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ]
 }

@@ -1,0 +1,6 @@
+draw text
+rotate sprite
+move camera
+zoom camera
+rotate camera
+play audio
