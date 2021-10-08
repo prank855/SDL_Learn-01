@@ -1,31 +1,9 @@
-#include <SDL.h>
-#include <SDL_image.h>
-#include <thread>
-#include <iostream>
-
-#define FPS_UNLIMITED 0
-#define FPS_500 2
-#define FPS_333 3
-#define FPS_250 4
-#define FPS_200 5
-#define FPS_166 6
-#define FPS_125 8
-#define FPS_100 10
-#define FPS_60 16
-#define FPS_30 32
-
-const int SCREEN_WIDTH = 1280;
-const int SCREEN_HEIGHT = 720;
-const int FRAMETIME_LIMIT = FPS_500;
-SDL_Window* window = NULL;
-SDL_Renderer* renderer;
-
-bool quit = false;
-int frame = 0;
+/*
 void BeginGameLoop() {
+	bool quit = false;
+	int frame = 0;
 
-
-
+	//event manager
 	SDL_Event e;
 
 	//timing init
@@ -41,17 +19,12 @@ void BeginGameLoop() {
 		std::cout << "WADAFAK??" << std::endl;
 	}
 
-	float x = SCREEN_WIDTH / 2;
-	float y = SCREEN_HEIGHT / 2;
-	float speed = 50;
-
 	while (!quit) {
 		frame++;
-
 		//delta time calculations
 		auto now = std::chrono::high_resolution_clock::now() - start;
 		std::chrono::duration<float> delta = now - lastTime;
-		float deltaTime = delta.count();
+		const float deltaTime = delta.count();
 		lastTime = now;
 
 		//check for exit button
@@ -60,32 +33,16 @@ void BeginGameLoop() {
 				quit = true;
 			}
 		}
-
 		//clear screen
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 		SDL_RenderClear(renderer);
 
-		//movement stuff
-		{
-			//array where you can query scancode of key of whether or not it is pressed down or not
-			const Uint8* keyboard_state_array = SDL_GetKeyboardState(NULL);
-			if (keyboard_state_array[SDL_SCANCODE_UP] || keyboard_state_array[SDL_SCANCODE_W]) {
-				y += -speed * deltaTime;
-			}
-			if (keyboard_state_array[SDL_SCANCODE_DOWN] || keyboard_state_array[SDL_SCANCODE_S]) {
-				y += speed * deltaTime;
-			}
-			if (keyboard_state_array[SDL_SCANCODE_LEFT] || keyboard_state_array[SDL_SCANCODE_A]) {
-				x += -speed * deltaTime;
-			}
-			if (keyboard_state_array[SDL_SCANCODE_RIGHT] || keyboard_state_array[SDL_SCANCODE_D]) {
-				x += speed * deltaTime;
-			}}
+		//const Uint8* keyboard_state_array = SDL_GetKeyboardState(NULL);
+		//example: keyboard_state_array[SDL_SCANCODE_UP]
 
-		//init rectangle: posx,posy,width,height
-		SDL_Rect r = { (int)x,(int)y,88,88 };
 
 		//draw sprite
+		SDL_Rect r = { (int)SCREEN_WIDTH / 2,(int)SCREEN_HEIGHT / 2,88,88 };
 		SDL_RenderCopy(renderer, pokiTexture, NULL, &r);
 
 		//present back buffer
@@ -98,19 +55,10 @@ void BeginGameLoop() {
 
 	}
 }
+*/
 
-
+#include "Application.h"
 int main(int argc, char* args[]) {
-	SDL_Init(SDL_INIT_VIDEO);
-	IMG_Init(IMG_INIT_PNG);
-
-	window = SDL_CreateWindow("SDL Learning", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-	renderer = SDL_CreateRenderer(window, -1, 0);
-
-	BeginGameLoop();
-
-	SDL_DestroyWindow(window);
-	SDL_Quit();
-
+	Application a;
 	return 0;
 }

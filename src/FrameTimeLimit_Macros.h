@@ -1,0 +1,10 @@
+#define FPS_UNLIMITED 0
+#define FPS_500 2
+#define FPS_333 3
+#define FPS_250 4
+#define FPS_200 5
+#define FPS_166 6
+#define FPS_125 8
+#define FPS_100 10
+#define FPS_60 16
+#define FPS_30 32

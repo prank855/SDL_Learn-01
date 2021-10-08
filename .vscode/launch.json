@@ -5,14 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "g++.exe - Build and debug",
+            "name": "g++.exe - Build and Debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}\\bin\\debug.exe",
             "cwd": "${workspaceFolder}\\bin",
             "externalConsole": false,
             "MIMode": "gdb",
-            "preLaunchTask": "Debug g++",
+            "preLaunchTask": "Build Debuggable g++",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",

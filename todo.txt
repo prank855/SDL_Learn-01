@@ -1,6 +1,24 @@
+TOP TO BOTTOM
+
+-- core SDL2 library testing
 draw text
-rotate sprite
+
 move camera
 zoom camera
+
+rotate sprite
 rotate camera
+
 play audio
+
+resizable window
+fullscreen
+
+-- filesystem stuff
+serialization
+
+-- networking
+websockets
+
+-- better builds
+figure out how to static link certain libraries
