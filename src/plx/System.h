@@ -11,5 +11,6 @@ namespace plx {
         void virtual Init() {};
         void virtual Start() {};
         void virtual Update() {};
+        void virtual LateUpdate() {};
     };
 };

@@ -19,10 +19,10 @@ void plx::Engine::Start() {
         s->Start();
     }
 
-    BeginGameLoop();
+    BeginEngineLoop();
 }
 
-void plx::Engine::BeginGameLoop() {
+void plx::Engine::BeginEngineLoop() {
     while (isRunning) {
         //increment frame count
         frame++;
@@ -39,6 +39,10 @@ void plx::Engine::BeginGameLoop() {
         if (plx::systems::TimeSystem::deltaTime) {
             using namespace plx::systems;
             std::cout << TimeSystem::deltaTime * 1000 << "ms \n";
+        }
+
+        for (auto s : systems) {
+            s->LateUpdate();
         }
 
         //kill game loop after 300 frames

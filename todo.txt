@@ -1,5 +1,12 @@
 TOP TO BOTTOM
 
+-- engine work
+implement systems:
+    - window/renderer system
+    - spriterenderer component
+    - input system (kb/m)
+    - camera system
+
 -- core SDL2 library testing
 draw text
 

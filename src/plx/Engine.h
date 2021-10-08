@@ -14,6 +14,6 @@ namespace plx {
         void AddSystem(System*);
     private:
         std::vector<System*> systems;
-        void BeginGameLoop();
+        void BeginEngineLoop();
     };
 };
