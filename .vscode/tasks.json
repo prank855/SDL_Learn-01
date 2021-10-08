@@ -7,8 +7,8 @@
             "args": [
                 "${workspaceFolder}\\src\\*.cpp", //entry point
                 "-g","-O2", // Allow debug
-                "-IC:\\deps\\SDL2-2.0.16\\x86_64-w64-mingw32\\include\\SDL2", "-IC:\\SDL2_image-2.0.5\\x86_64-w64-mingw32\\include\\SDL2", //includes
-                "-LC:\\deps\\SSDL2-2.0.16\\x86_64-w64-mingw32\\lib","-LC:\\SDL2_image-2.0.5\\x86_64-w64-mingw32\\lib", //linker
+                "-IC:\\deps\\SDL2-2.0.16\\x86_64-w64-mingw32\\include\\SDL2", "-IC:\\deps\\SDL2_image-2.0.5\\x86_64-w64-mingw32\\include\\SDL2", //includes
+                "-LC:\\deps\\SDL2-2.0.16\\x86_64-w64-mingw32\\lib","-LC:\\deps\\SDL2_image-2.0.5\\x86_64-w64-mingw32\\lib", //linker
                 "-lmingw32", "-lSDL2main", "-lSDL2","-lSDL2_image", //sdl flags
                 "-o","${workspaceFolder}\\bin\\debug.exe" //output exe
             ]
