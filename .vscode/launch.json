@@ -12,7 +12,7 @@
             "cwd": "${workspaceFolder}\\bin",
             "externalConsole": false,
             "MIMode": "gdb",
-            "preLaunchTask": "Build Debuggable g++",
+            "preLaunchTask": "Build DEBUG g++",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",

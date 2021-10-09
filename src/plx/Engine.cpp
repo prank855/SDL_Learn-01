@@ -1,16 +1,8 @@
 #include <iostream>
-
 #include "Engine.h"
 #include "System.h"
-
-void plx::Engine::AddSystem(System* s) {
-    std::cout << "Added + Initialized System: " << s->name << std::endl;
-    systems.push_back(s);
-    s->engine = this;
-    s->Init();
-}
-
 #include "systems/TimeSystem.h"
+
 void plx::Engine::Start() {
     std::cout << "Engine Started\n";
 
@@ -40,14 +32,11 @@ void plx::Engine::BeginEngineLoop() {
             //std::cout << TimeSystem::deltaTime * 1000 << "ms \n";
         }
 
+        //late update systems
         for (auto s : systems) {
             s->LateUpdate();
         }
 
-        //kill game loop after X frames
-        if (frame >= 100000) {
-            isRunning = false;
-        }
     }
     std::cout << "Engine Stopped\n";
 }

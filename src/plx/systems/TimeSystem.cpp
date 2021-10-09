@@ -10,13 +10,11 @@ void TimeSystem::Init() {
     lastTime = now;
 }
 
+void TimeSystem::Start() {}
+
 float TimeSystem::getElapsed() {
     std::chrono::duration<float>  now = std::chrono::high_resolution_clock::now() - startTime;
     return now.count();
-}
-
-void TimeSystem::Start() {
-
 }
 
 void TimeSystem::Update() {

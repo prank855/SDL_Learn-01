@@ -5,3 +5,7 @@ void plx::Node::Update() {
         c->Update();
     }
 }
+
+int plx::Node::GetID() {
+    return id;
+}

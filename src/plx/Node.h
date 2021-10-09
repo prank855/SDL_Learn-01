@@ -7,7 +7,9 @@ namespace plx {
     public:
         void Update();
         void AddComponent(Component*);
+        int GetID();
     private:
         std::vector<Component*> components;
+        int id = -1;
     };
 };

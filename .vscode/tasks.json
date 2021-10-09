@@ -2,7 +2,7 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "Build Debuggable g++",
+            "label": "Build DEBUG g++",
             "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe",
             "args": [
                 "${workspaceFolder}\\src\\*.cpp",
@@ -20,14 +20,14 @@
         },
         {
             "type": "cppbuild",
-            "label": "Build g++",
+            "label": "Build RELEASE g++",
             "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe",
             "args": [
                 "${workspaceFolder}\\src\\*.cpp",
                 "${workspaceFolder}\\src\\plx\\*.cpp",
                 "${workspaceFolder}\\src\\plx\\systems\\*.cpp", //files to compile
-                "-O2","--std=c++20","-Wall", // Allow debug
-                "-Wl,--subsystem,windows","-mwindows",
+                "-O2","--std=c++20", // compile for speed
+                "-Wl,--subsystem,windows","-mwindows", // remove console
                 "-IC:\\deps\\SDL2-2.0.16\\x86_64-w64-mingw32\\include\\SDL2", "-IC:\\deps\\SDL2_image-2.0.5\\x86_64-w64-mingw32\\include\\SDL2", //includes
                 "-LC:\\deps\\SDL2-2.0.16\\x86_64-w64-mingw32\\lib","-LC:\\deps\\SDL2_image-2.0.5\\x86_64-w64-mingw32\\lib", //linker
                 "-lmingw32", "-lSDL2main", "-lSDL2","-lSDL2_image", //sdl flags

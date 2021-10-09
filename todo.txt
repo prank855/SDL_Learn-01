@@ -1,12 +1,12 @@
 TOP TO BOTTOM
--- tasks
-	- compile objects on file save
-	- build with the compiled objects
 
 -- engine work
 implement systems:
-    - window/renderer system
+    - node add component by template/generic
+    - asset manager system
     - spriterenderer component
+    - make system init return a bool?
+    - node pooling
     - input system (kb/m)
     - camera system
 
@@ -32,3 +32,5 @@ websockets
 
 -- better builds
 figure out how to static link certain libraries
+
+figure out how to save object files in a temp folder instead of root directory

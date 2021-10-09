@@ -4,6 +4,8 @@
 //#include <SDL_image.h>
 
 #include "plx\systems\TimeSystem.h"
+#include "plx\systems\ScreenSystem.h"
+#include "plx/systems/RenderSystem.h"
 #include "plx\Engine.h"
 
 Application::Application() {
@@ -17,9 +19,13 @@ Application::Application() {
     //renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     plx::Engine engine;
-    auto* ts = new TimeSystem;
-    //ts->debug = true;
-    engine.AddSystem(ts);
+    auto ss = engine.AddSys<ScreenSystem>();
+    ss->SetTitle("Epic Game");
+    auto ts = engine.AddSys<TimeSystem>();
+    auto rs = engine.AddSys<RenderSystem>();
+
+    //engine.scene.AddNode(new plx::Node);
+
     engine.Start();
 
     //SDL_DestroyWindow(window);
