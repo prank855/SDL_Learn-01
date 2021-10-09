@@ -66,7 +66,6 @@
         "thread": "cpp",
         "cinttypes": "cpp"
     },
-    "telemetry.enableCrashReporter": false,
     "C_Cpp.formatting": "vcFormat",
     "C_Cpp.vcFormat.newLine.beforeCatch": false,
     "C_Cpp.vcFormat.newLine.beforeElse": false,

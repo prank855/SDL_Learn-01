@@ -36,17 +36,16 @@ void plx::Engine::BeginEngineLoop() {
         scene.Update();
 
         //if TimeSystem::deltaTime exists, output frametime info
-        if (plx::systems::TimeSystem::deltaTime) {
-            using namespace plx::systems;
-            std::cout << TimeSystem::deltaTime * 1000 << "ms \n";
+        if (TimeSystem::deltaTime) {
+            //std::cout << TimeSystem::deltaTime * 1000 << "ms \n";
         }
 
         for (auto s : systems) {
             s->LateUpdate();
         }
 
-        //kill game loop after 300 frames
-        if (frame >= 60 * 5) {
+        //kill game loop after X frames
+        if (frame >= 100000) {
             isRunning = false;
         }
     }

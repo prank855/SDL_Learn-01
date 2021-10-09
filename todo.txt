@@ -1,4 +1,7 @@
 TOP TO BOTTOM
+-- tasks
+	- compile objects on file save
+	- build with the compiled objects
 
 -- engine work
 implement systems:
