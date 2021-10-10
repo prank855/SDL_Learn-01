@@ -24,7 +24,7 @@ namespace plx {
         };
 
         template<typename T>
-        T* AddSys() {
+        T* AddSystem() {
             T* s = new T;
 
             std::cout << "Added + Initialized System: " << s->name << std::endl;

@@ -12,4 +12,5 @@ public:
 private:
     SDL_Window* window;
     SDL_Renderer* renderer;
+    SDL_Color clearColor{ 0,0,0,255 };
 };

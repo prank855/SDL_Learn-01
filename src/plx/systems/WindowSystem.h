@@ -3,9 +3,9 @@
 #include <SDL.h>
 #include "../System.h"
 
-class ScreenSystem : public plx::System {
+class WindowSystem : public plx::System {
 public:
-    ScreenSystem() : plx::System("ScreenSystem") {
+    WindowSystem() : plx::System("ScreenSystem") {
     };
     void Init();
     void Start();

@@ -1,7 +1,15 @@
 {
     "tasks": [
         {
+            "label": "Clean Bin Folder",
+            "command":"",
+            "windows":{
+                "command": "clean.bat"
+            }
+        },
+        {
             "type": "cppbuild",
+            "dependsOn":"Clean Bin Folder",
             "label": "Build DEBUG g++",
             "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe",
             "args": [
@@ -20,6 +28,7 @@
         },
         {
             "type": "cppbuild",
+            "dependsOn":"Clean Bin Folder",
             "label": "Build RELEASE g++",
             "command": "C:\\ProgramData\\chocolatey\\bin\\g++.exe",
             "args": [

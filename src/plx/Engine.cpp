@@ -15,6 +15,7 @@ void plx::Engine::Start() {
 }
 
 void plx::Engine::BeginEngineLoop() {
+
     while (isRunning) {
         //increment frame count
         frame++;
@@ -24,19 +25,14 @@ void plx::Engine::BeginEngineLoop() {
             s->Update();
         }
 
-        //update all scene nodes
+        //update scene
         scene.Update();
-
-        //if TimeSystem::deltaTime exists, output frametime info
-        if (TimeSystem::deltaTime) {
-            //std::cout << TimeSystem::deltaTime * 1000 << "ms \n";
-        }
 
         //late update systems
         for (auto s : systems) {
             s->LateUpdate();
         }
-
     }
+
     std::cout << "Engine Stopped\n";
 }

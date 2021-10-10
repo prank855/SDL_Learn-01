@@ -1,28 +1,18 @@
 #include "Application.h"
 
-//#include <SDL.h>
-//#include <SDL_image.h>
-
 #include "plx\systems\TimeSystem.h"
-#include "plx\systems\ScreenSystem.h"
+#include "plx\systems\WindowSystem.h"
 #include "plx/systems/RenderSystem.h"
 #include "plx\Engine.h"
 
 Application::Application() {
-    //SDL_Window* window = NULL;
-    //SDL_Renderer* renderer;
-
-    //SDL_Init(SDL_INIT_VIDEO);
-    //IMG_Init(IMG_INIT_PNG);
-
-    //window = SDL_CreateWindow("SDL Learning", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1280, 720, SDL_WINDOW_SHOWN);
-    //renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     plx::Engine engine;
-    auto ss = engine.AddSys<ScreenSystem>();
+    // add systems by priority order
+    auto ss = engine.AddSystem<WindowSystem>();
     ss->SetTitle("Epic Game");
-    auto ts = engine.AddSys<TimeSystem>();
-    auto rs = engine.AddSys<RenderSystem>();
+    engine.AddSystem<RenderSystem>();
+    engine.AddSystem<TimeSystem>();
 
     //engine.scene.AddNode(new plx::Node);
 
