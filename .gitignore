@@ -1,4 +1,3 @@
-/bin/debug.exe
-/bin/release.exe
+bin/
 /temp/
 *.o
