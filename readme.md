@@ -2,6 +2,8 @@ install mingw using chocolatey
 
 open root folder in vscode
 
-press f5 on a .cpp file to run & debug program
+run "compile_ALL_files.bat"
 
-ctrl-shift-b for debug OR release build tasks
+press f5 in vscode to debug and run program
+
+run "build_release.bat" for release executable, will be in "bin/" folder

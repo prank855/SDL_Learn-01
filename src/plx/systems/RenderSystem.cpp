@@ -34,7 +34,8 @@ void RenderSystem::Update() {
             int w, h; SDL_GetWindowSize(window, &w, &h);
 
             //if position offscreen, kill program
-            if ((int)(TimeSystem::elapsed * (float)20) >= w) {
+            int speed = 50;
+            if ((int)(TimeSystem::elapsed * speed) >= w) {
                 engine->isRunning = false;
             } else {
 
@@ -42,7 +43,7 @@ void RenderSystem::Update() {
                 SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
 
                 // create rect
-                SDL_Rect r = { (int)(TimeSystem::elapsed * (float)20), h / 2, 40,40 };
+                SDL_Rect r = { (int)(TimeSystem::elapsed * speed), h / 2, 40,40 };
 
                 // draw rect
                 SDL_RenderFillRect(renderer, &r);
