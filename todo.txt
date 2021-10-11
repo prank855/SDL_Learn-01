@@ -2,7 +2,7 @@ TOP TO BOTTOM
 
 -- engine work
 implement systems:
-    - node add component by template/generic
+    - !!! node add component by template/generic
     - asset manager system
     - spriterenderer component
     - make system init return a bool?
@@ -31,6 +31,8 @@ serialization
 websockets
 
 -- better builds
+compile on saves
+
 figure out how to static link certain libraries
 
 figure out how to save object files in a temp folder instead of root directory

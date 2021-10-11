@@ -1,3 +1,7 @@
-use vscode
-press f5 to debug/run
-ctrl-shift-b for debug/release build tasks
+install mingw using chocolatey
+
+open root folder in vscode
+
+press f5 on a .cpp file to run & debug program
+
+ctrl-shift-b for debug OR release build tasks

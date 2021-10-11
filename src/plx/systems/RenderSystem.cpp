@@ -49,7 +49,7 @@ void RenderSystem::Update() {
             }
         }
 
-        // present/show render
+        // present/show rendered frame
         SDL_RenderPresent(renderer);
 
         SDL_Delay(5); //hardcoded fps limiter (6ms ~166fps, because sdl_delay seems to always add 1ms to it)
