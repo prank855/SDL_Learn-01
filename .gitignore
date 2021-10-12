@@ -1,3 +1,6 @@
-bin/
-/temp/
-*.o
+bin/*
+/temp
+/publish
+
+hcheck
+fdebug

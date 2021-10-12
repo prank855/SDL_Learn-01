@@ -8,6 +8,9 @@ set arg1=%1
 set arg2=%2
 :: replace "\" with "\\" so g++ doesnt throw a fit
 set modified=%arg1:\=\\%
+
+:: delete prev file if exists
+del %tempFolder%\%arg2%.o > nul 2> nul
 :: compiles the file
 g++ %modified% -c %includes%
 :: moves the compiled file to the temp folder

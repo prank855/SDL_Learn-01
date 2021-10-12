@@ -5,7 +5,7 @@
 
 class WindowSystem : public plx::System {
 public:
-    WindowSystem() : plx::System("ScreenSystem") {
+    WindowSystem() : plx::System("WindowSystem") {
     };
     void Init();
     void Start();

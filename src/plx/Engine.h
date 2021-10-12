@@ -8,33 +8,35 @@ namespace plx {
     class System;
     class Engine {
     public:
+        static Engine* self;
+        Engine();
         Scene scene;
-        int frame = 0;
+        unsigned int frame = 0;
         bool isRunning = true;
+
         void Start();
 
         template<typename T>
         T* GetSystem() {
+            T sys;
             for (auto s : systems) {
-                if (static_cast<T*>(s) != nullptr) {
-                    return static_cast<T*>(s);
+                if (s->name == sys.name) {
+                    return (T*)s;
                 }
             }
             return nullptr;
         };
-
         template<typename T>
         T* AddSystem() {
-            T* s = new T;
+            T* t = new T;
+            systems.push_back(t);
 
-            std::cout << "Added + Initialized System: " << s->name << std::endl;
-            systems.push_back(s);
-            s->engine = this;
-            s->Init();
+            t->engine = this;
+            t->Init();
+            std::cout << "Added + Initialized System: " << t->name << std::endl;
 
-            return s;
+            return t;
         };
-
     private:
         std::vector<System*> systems;
         void BeginEngineLoop();

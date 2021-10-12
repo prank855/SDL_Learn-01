@@ -2,7 +2,6 @@ TOP TO BOTTOM
 
 -- engine work
 implement systems:
-    - !!! node add component by template/generic
     - asset manager system
     - spriterenderer component
     - make system init return a bool?

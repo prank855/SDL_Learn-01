@@ -5,7 +5,7 @@ namespace plx {
     class Engine;
     class System {
     public:
-        Engine* engine = NULL;
+        Engine* engine = nullptr;
         const char* name;
         bool debug = false;
         System(const char*);

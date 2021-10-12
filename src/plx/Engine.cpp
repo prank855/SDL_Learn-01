@@ -3,6 +3,12 @@
 #include "System.h"
 #include "systems/TimeSystem.h"
 
+plx::Engine* plx::Engine::self = nullptr;
+
+plx::Engine::Engine() {
+    plx::Engine::self = this;
+}
+
 void plx::Engine::Start() {
     std::cout << "Engine Started\n";
 
@@ -21,16 +27,16 @@ void plx::Engine::BeginEngineLoop() {
         frame++;
 
         //update all systems
-        for (auto s : systems) {
-            s->Update();
+        for (auto sys : systems) {
+            sys->Update();
         }
 
         //update scene
         scene.Update();
 
         //late update systems
-        for (auto s : systems) {
-            s->LateUpdate();
+        for (auto sys : systems) {
+            sys->LateUpdate();
         }
     }
 

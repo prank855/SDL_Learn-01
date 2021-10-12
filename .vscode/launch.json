@@ -12,7 +12,7 @@
       "cwd": "${workspaceFolder}\\bin",
       "externalConsole": false,
       "MIMode": "gdb",
-      "preLaunchTask": "Build DEBUG g++"
+      "preLaunchTask": "Fast Build DEBUG g++"
     }
   ]
 }

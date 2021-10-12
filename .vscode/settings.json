@@ -4,6 +4,10 @@
       {
         "match": "\\.cpp$",
         "cmd": "compile_file.bat ${relativeFile} ${fileBasenameNoExt}"
+      },
+      {
+        "match": "\\.h$",
+        "cmd": "echo . > hcheck"
       }
     ]
   },

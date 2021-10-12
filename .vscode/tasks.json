@@ -2,8 +2,8 @@
   "tasks": [
     {
       "type": "process",
-      "label": "Build DEBUG g++",
-      "command": "build_debug.bat"
+      "label": "Fast Build DEBUG g++",
+      "command": "fast_build_debug.bat"
     }
   ],
   "version": "2.0.0"

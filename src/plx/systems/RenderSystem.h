@@ -7,10 +7,9 @@ class RenderSystem : public plx::System {
 public:
     RenderSystem() : plx::System("RenderSystem") {};
     void Init();
-    void Start();
     void Update();
-private:
-    SDL_Window* window;
+    void LateUpdate();
     SDL_Renderer* renderer;
+    SDL_Window* window;
     SDL_Color clearColor{ 0,0,0,255 };
 };

@@ -4,7 +4,8 @@
 
 class MovementController : public plx::Component {
 public:
+    MovementController() : plx::Component("MovementController") {};
     void Init();
-    void Start();
     void Update();
+    float speed = 80;
 };
