@@ -4,7 +4,7 @@
 
 float TimeSystem::deltaTime = 0;
 
-// returns time since engine start
+// returns how long engine has been running
 float TimeSystem::elapsed = 0;
 
 void TimeSystem::Init() {
@@ -17,8 +17,7 @@ void TimeSystem::Start() {}
 
 // returns time since program start
 float TimeSystem::getElapsed() {
-    std::chrono::duration<float> now = std::chrono::high_resolution_clock::now() - startTime;
-    return now.count();
+    return ((std::chrono::duration<float>)(std::chrono::high_resolution_clock::now() - startTime)).count();
 }
 
 void TimeSystem::Update() {

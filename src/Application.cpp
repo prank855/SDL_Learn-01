@@ -1,12 +1,8 @@
 #include "Application.h"
+#include "plx\plx.h"
 
-#include "plx\systems\TimeSystem.h"
-#include "plx\systems\WindowSystem.h"
-#include "plx/systems/RenderSystem.h"
-#include "plx\Engine.h"
-#include "plx\components\MovementController.h"
-#include "plx\components\RectangleComponent.h"
 
+#include <ctime>
 Application::Application() {
 
     plx::Engine engine;
@@ -17,11 +13,16 @@ Application::Application() {
     engine.AddSystem<RenderSystem>();
     engine.AddSystem<TimeSystem>();
 
-    plx::Scene* s = &engine.scene;
+    { // scene setup code
+        plx::Scene* s = &engine.scene;
+        srand((unsigned)time(NULL)); // initialize randomizer thing
+        auto n = s->CreateNode();
+        auto mc = n->AddComponent<MovementController>();
+        auto rc = n->AddComponent<RectangleComponent>();
+        n->position.x = ((double)rand() / (RAND_MAX)) * 1280;
+        n->position.y = ((double)rand() / (RAND_MAX)) * 720;
+    }
 
-    auto n = s->CreateNode();
-    auto mc = n->AddComponent<MovementController>();
-    auto rc = n->AddComponent<RectangleComponent>();
 
     engine.Start();
 

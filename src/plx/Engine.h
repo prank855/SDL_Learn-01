@@ -10,6 +10,7 @@ namespace plx {
     public:
         static Engine* self;
         Engine();
+        ~Engine();
         Scene scene;
         unsigned int frame = 0;
         bool isRunning = true;

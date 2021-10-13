@@ -2,8 +2,11 @@ install mingw using chocolatey
 
 open root folder in vscode
 
-open cmd_vars.bat and set dependency folders
+make sure runonsave extension is installed for fast debugging to work
+
+open cmd_vars.bat and set folder locations of dependencies
 
 press f5 in vscode to debug and run program
 
-run "publish.bat" for release executable/7zip file, will be in "publish" folder
+run "publish.bat" to export program into the "publish/" folder
+    - 7zip file, and a loose folder

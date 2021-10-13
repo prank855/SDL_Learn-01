@@ -7,5 +7,5 @@ public:
     MovementController() : plx::Component("MovementController") {};
     void Init();
     void Update();
-    float speed = 80;
+    float speed = 300;
 };

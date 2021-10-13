@@ -4,13 +4,15 @@ call cmd_vars.bat
 
 if not exist fdebug (
     echo First Time Fast Debug Setup
+    g++ src\\plx\\plx.h %includes%
     call compile_ALL_files.bat
     echo . > fdebug
 )
 
 if exist hcheck (
-    echo Header file changed, recompiling all files...
-    call compile_ALL_files.bat
+    echo A Header file changed, recompiling all files...
+    g++ src\\plx\\plx.h %includes%
+    call compile_ALL_files.bat >nul
     del hcheck
 ) else (
     echo Fast Debug Started...

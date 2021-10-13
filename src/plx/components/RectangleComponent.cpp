@@ -16,7 +16,7 @@ void RectangleComponent::Update() {
             auto renderer = rs->renderer;
             if (renderer != nullptr) {
                 SDL_SetRenderDrawColor(renderer, 0, 255, 255, 255);
-                SDL_FRect r = { parent->position.x,parent->position.y, 40,40 };
+                SDL_FRect r = { parent->position.x,parent->position.y, 10,10 };
                 SDL_RenderFillRectF(renderer, &r);
             }
         }

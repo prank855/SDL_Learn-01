@@ -4,6 +4,7 @@
 #include "../Node.h"
 #include "../systems/TimeSystem.h"
 
+
 void MovementController::Init() {
     parent->position.y = 720 / 2;
     parent->position.x = 1280 / 2;

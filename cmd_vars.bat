@@ -1,9 +1,13 @@
 @echo off
 :: this file sets variables for other scripts to use
 
-:: please set variable yourself, needs SDL2-2.0.16 & SDL2_image-2.0.5 folders
-set depLocation=C:\\deps
-set mingwBin=C:\\ProgramData\\chocolatey\\lib\\mingw\\tools\\install\\mingw64\\bin
+:: please set these variables yourself
+    :: location of sdl2/sdl2_image folders
+    set depLocation=C:\\deps
+    :: location of mingw binaries
+    set mingwBin=C:\\ProgramData\\chocolatey\\lib\\mingw\\tools\\install\\mingw64\\bin
+
+:: dont edit anything under this line
 
 :: temp folder location
 set tempFolder=temp

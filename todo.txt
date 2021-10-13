@@ -4,10 +4,10 @@ TOP TO BOTTOM
 implement systems:
     - asset manager system
     - spriterenderer component
-    - make system init return a bool?
-    - node pooling
     - input system (kb/m)
     - camera system
+    -? load and draw sprite onto a quad
+    -? make system init return a bool?
 
 -- core SDL2 library testing
 draw text

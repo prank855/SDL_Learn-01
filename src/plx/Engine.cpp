@@ -9,6 +9,13 @@ plx::Engine::Engine() {
     plx::Engine::self = this;
 }
 
+plx::Engine::~Engine() {
+    for (auto s : systems) {
+        delete s;
+    }
+    systems.clear();
+}
+
 void plx::Engine::Start() {
     std::cout << "Engine Started\n";
 
@@ -23,22 +30,17 @@ void plx::Engine::Start() {
 void plx::Engine::BeginEngineLoop() {
 
     while (isRunning) {
-        //increment frame count
         frame++;
 
-        //update all systems
         for (auto sys : systems) {
             sys->Update();
         }
 
-        //update scene
         scene.Update();
 
-        //late update systems
         for (auto sys : systems) {
             sys->LateUpdate();
         }
     }
-
     std::cout << "Engine Stopped\n";
 }

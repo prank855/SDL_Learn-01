@@ -25,11 +25,11 @@ void RenderSystem::Update() {
     }
 }
 
+#include "TimeSystem.h"
 void RenderSystem::LateUpdate() {
     if (renderer != nullptr) {
         // present/show rendered frame
         SDL_RenderPresent(renderer);
-
-        SDL_Delay(2); //hardcoded fps limiter (3ms ~333fps, because sdl_delay seems to always add 1ms to it)
+        SDL_Delay(1); //hardcoded fps limiter (2ms ~500fps, because sdl_delay seems to always add 1ms to it)
     }
 }

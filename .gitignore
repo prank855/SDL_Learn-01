@@ -1,4 +1,5 @@
 bin/*
+src/plx/plx.h.gch
 /temp
 /publish
 
