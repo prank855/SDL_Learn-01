@@ -9,4 +9,5 @@ open cmd_vars.bat and set folder locations of dependencies
 press f5 in vscode to debug and run program
 
 run "publish.bat" to export program into the "publish/" folder
-    - 7zip file, and a loose folder
+    
+    - generates a 7zip file, and a loose folder
