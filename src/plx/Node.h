@@ -29,7 +29,7 @@ namespace plx {
     private:
         Node() {};
         friend class Scene;
-        int id;
+        unsigned int id;
         bool kill = false;
         std::vector<Component*> components;
     };

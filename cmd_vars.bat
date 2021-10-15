@@ -12,13 +12,15 @@
 :: temp folder location
 set tempFolder=temp
 
+set c_standard=-std=c++20
+
 :: DEBUG FLAGS
 :: allow debug, compile fast, set c++ standard, allow error checking output
-set debug_pre_flags=-g -O0 --std=c++20
+set debug_pre_flags=-g -O0
 
 :: BUILD FLAGS
 :: compile for speed, set c++ standard, allow error checking output, remove external console
-set build_pre_flags=-O3 --std=c++20 -Wl,--subsystem,windows -mwindows
+set build_pre_flags=-O3 -Wl,--subsystem,windows -mwindows
 
 :: defines includes
 set includes=-I%depLocation%\\SDL2-2.0.16\\x86_64-w64-mingw32\\include\\SDL2 -I%depLocation%\\SDL2_image-2.0.5\\x86_64-w64-mingw32\\include\\SDL2

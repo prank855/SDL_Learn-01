@@ -2,6 +2,8 @@
 
 #include <SDL.h>
 #include "../System.h"
+#include "Graphic.h"
+#include <vector>
 
 class RenderSystem : public plx::System {
 public:
@@ -9,7 +11,10 @@ public:
     void Init();
     void Update();
     void LateUpdate();
-    SDL_Renderer* renderer;
+    void AddGraphic(Graphic* graphic);
     SDL_Window* window;
     SDL_Color clearColor{ 0,0,0,255 };
+private:
+    SDL_Renderer* renderer;
+    std::vector<Graphic*> graphicQueue;
 };

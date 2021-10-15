@@ -3,6 +3,7 @@
 
 #include <chrono>
 
+#include <iomanip>
 plx::Scene::Scene() {
     auto t1 = std::chrono::high_resolution_clock::now();
 
@@ -16,7 +17,7 @@ plx::Scene::Scene() {
     auto t = ((std::chrono::duration<float>)(t2 - t1)).count();
 
     std::cout << "Created " << poolInitialSize << " pooled nodes in " <<
-        t << "sec\n";
+        t * 1000.0f << "ms\n";
 }
 
 plx::Scene::~Scene() {

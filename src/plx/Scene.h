@@ -8,7 +8,7 @@ namespace plx {
         ~Scene();
         void Update();
         Node* CreateNode();
-        const int poolInitialSize = 5000;
+        const unsigned int poolInitialSize = 5000;
     private:
         unsigned int nodeCount = 0;
         std::vector<Node*> nodes;

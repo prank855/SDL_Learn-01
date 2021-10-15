@@ -4,6 +4,7 @@ TOP TO BOTTOM
 implement systems:
     - asset manager system
     - spriterenderer component
+    - child nodes
     - input system (kb/m)
     - camera system
     -? load and draw sprite onto a quad

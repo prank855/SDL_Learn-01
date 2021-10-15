@@ -12,7 +12,7 @@ set modified=%arg1:\=\\%
 :: delete prev file if exists
 del %tempFolder%\%arg2%.o > nul 2> nul
 :: compiles the file
-g++ %modified% -c %includes%
+g++ %c_standard% %modified% -c %includes%
 :: moves the compiled file to the temp folder
 move %arg2%.o %tempFolder%\%arg2%.o >nul
 echo Compiled %arg2%

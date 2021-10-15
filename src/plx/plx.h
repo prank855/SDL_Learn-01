@@ -21,3 +21,4 @@
 // core components
 #include "components/MovementController.h"
 #include "components/RectangleComponent.h"
+#include "components/SpriteComponent.h"

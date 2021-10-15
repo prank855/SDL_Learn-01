@@ -29,7 +29,7 @@ void plx::Engine::Start() {
 
 float timeSinceFps = 0;
 int framesSinceFps = 0;
-float fpsDebugTimerLength = 2.0f;
+float fpsDebugTimerLength = 5.0f;
 void plx::Engine::BeginEngineLoop() {
 
     while (isRunning) {
@@ -38,8 +38,8 @@ void plx::Engine::BeginEngineLoop() {
         timeSinceFps += TimeSystem::deltaTime;
         framesSinceFps++;
         if (timeSinceFps > fpsDebugTimerLength) {
-            timeSinceFps -= 2;
-            std::cout << "FPS: " << (float)framesSinceFps / fpsDebugTimerLength << "\n";
+            timeSinceFps -= fpsDebugTimerLength;
+            std::cout << "AVG FPS: " << (float)framesSinceFps / fpsDebugTimerLength << "\n";
             framesSinceFps = 0;
         }
 
