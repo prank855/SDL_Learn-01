@@ -1,7 +1,6 @@
 #include "Application.h"
 #include "plx\plx.h"
 #include <ctime>
-#include <thread>
 
 Application::Application() {
 
@@ -17,34 +16,30 @@ Application::Application() {
     { // scene setup code
         plx::Scene* s = &engine.scene; // pointer to scene
 
-        srand((unsigned)time(NULL)); // initialize randomizer thing
+        auto tempNode = s->CreateNode(); // create node
 
-        auto n = s->CreateNode(); // create node
-
-        auto mc = n->AddComponent<MovementController>();
+        auto mc = tempNode->AddComponent<MovementController>();
         mc->speed = 150;
 
-        /*
-        auto rc = n->AddComponent<RectangleComponent>();
-        rc->width = 25;
-        rc->height = 25;
-        rc->color.r = 0;rc->color.g = 128; rc->color.b = 255;
-        */
+        auto rectangleComponent = tempNode->AddComponent<RectangleComponent>();
+        auto spriteComponent = tempNode->AddComponent<SpriteComponent>();
 
-        auto spritec = n->AddComponent<SpriteComponent>();
-        spritec->width = 100;
-        spritec->height = 100;
-        spritec->fileName = "./resources/steel.bmp";
+        rectangleComponent->origin = { .5,.5 };
+        rectangleComponent->width = 110;
+        rectangleComponent->height = 110;
+        rectangleComponent->color = SDL_Color{ 255,0,0,255 };
+
+        spriteComponent->width = 100;
+        spriteComponent->height = 100;
+        spriteComponent->origin = { .5,.5 };
+        spriteComponent->fileName = "./resources/steel.bmp";
 
         // set node position to a random position on screen
-        n->position.x = rand() % ws->windowed_width;
-        n->position.y = rand() % ws->windowed_height;
+        srand((unsigned)time(NULL)); // initialize randomizer thing
+        tempNode->position.x = rand() % ws->windowed_width;
+        tempNode->position.y = rand() % ws->windowed_height;
 
     }
 
-
     engine.Start();
-
-    //SDL_DestroyWindow(window);
-    //SDL_Quit();
 }

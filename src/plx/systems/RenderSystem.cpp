@@ -35,7 +35,9 @@ void RenderSystem::LateUpdate() {
         //draw shit here
         for (auto graphic : graphicQueue) {
             graphic->Render(renderer);
-            delete graphic;
+        }
+        for (auto g : graphicQueue) {
+            delete g;
         }
         graphicQueue.clear();
 

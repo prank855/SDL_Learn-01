@@ -1,9 +1,10 @@
 #include "Scene.h"
+#include "Node.h"
+
 #include <iostream>
-
 #include <chrono>
-
 #include <iomanip>
+
 plx::Scene::Scene() {
     auto t1 = std::chrono::high_resolution_clock::now();
 
@@ -33,18 +34,27 @@ plx::Scene::~Scene() {
 
 }
 
-plx::Node* plx::Scene::CreateNode() {
+plx::Node* plx::Scene::MakeNode() {
     if (nodePool.size() <= 0) {
         auto n = new Node;
-        n->id = nodeCount++;
-        //std::cout << "Node pool depleted\n";
+        n->m_id = nodeCount++;
         return n;
     }
     Node* n = nodePool.back();
-    n->id = nodeCount++;
-    nodes.push_back(n);
+    n->m_id = nodeCount++;
     nodePool.pop_back();
+    std::cout << "CREATING NODE " << n->id << std::endl;
     return n;
+}
+
+plx::Node* plx::Scene::CreateNode() {
+    auto temp = MakeNode();
+    temp->scene = this;
+    temp->name = "Node " + std::to_string(temp->id);
+    nodes.push_back(temp);
+    nodePool.pop_back();
+    std::cout << "ADDED NODE " << temp->id << " TO SCENE\n";
+    return temp;
 }
 
 void plx::Scene::Update() {
